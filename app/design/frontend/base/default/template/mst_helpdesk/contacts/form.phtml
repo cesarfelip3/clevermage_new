@@ -1,0 +1,99 @@
+
+<script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+
+
+
+<div class="innerwrapper">
+  <form action="<?php echo $this->getFormAction(); ?>" id="contactForm" class="helpdesk-contacts-form" method="post" enctype="multipart/form-data">
+    <div class="fieldset">
+      <h2 class="legend"><?php echo Mage::helper('contacts')->__('Contact Information') ?></h2>
+      <ul class="form-list">
+      <li class="fields"><strong>801 418 9457</strong></li>
+      <li class="fields">1405 S 2100 E, Salt Lake City, UT 84108</li>
+        <li class="fields">
+          <div class="field">
+            <div class="input-box">
+              <input name="name" placeholder="Name *" id="name" title="<?php echo Mage::helper('contacts')->__('Name') ?>" value="<?php echo $this->htmlEscape($this->helper('contacts')->getUserName()) ?>" class="input-text required-entry" type="text" />
+            </div>
+          </div>
+          <div class="field">
+            <div class="input-box">
+              <input name="email" id="email" title="Email" value="" type="text" class="helpdesk_email"/>
+              <style>
+                            .helpdesk_email {
+                                display:none;
+                            }
+                        </style>
+              <input placeholder="Email *" name="mail" id="mail" title="<?php echo Mage::helper('contacts')->__('Email') ?>" value="<?php echo $this->htmlEscape($this->helper('contacts')->getUserEmail()) ?>" class="input-text required-entry validate-email" type="text" />
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="input-box">
+            <input name="telephone" placeholder="Telephone" id="telephone" title="<?php echo Mage::helper('contacts')->__('Telephone') ?>" value="" class="input-text" type="text" />
+          </div>
+        </li>
+        <li class="wide">
+          <div class="field">
+            <div class="input-box">
+              <input name="subject"  placeholder="subject *" id="subject" title="<?php echo Mage::helper('helpdesk')->__('Subject') ?>" value="" class="input-text required-entry" type="text" />
+            </div>
+          </div>
+        </li>
+        <li class="wide">
+          <div class="input-box">
+            <textarea name="comment" placeholder="Comment *" id="comment" title="<?php echo Mage::helper('contacts')->__('Comment') ?>" class="required-entry input-text" cols="5" rows="3"></textarea>
+          </div>
+        </li>
+        
+        <?php foreach ($this->getCustomFields() as $field): ?>
+        
+        <?php endforeach; ?>
+       <!-- <li class="wide">
+          <label for="attachment"><?php echo $this->__('Attach files') ?></label>
+          <div class="input-box">
+            <input type='file' class='multi' name='attachment[]' id='attachment'>
+            </textarea>
+          </div>
+        </li>-->
+      </ul>
+    </div>
+    <div class="buttons-set">
+      
+      <input type="text" name="hideit" id="hideit" value="" style="display:none !important;" />
+      <button type="submit" title="<?php echo Mage::helper('contacts')->__('Submit') ?>" class="button"
+            onclick="contactFormSubmit(this)" ><span><span><?php echo Mage::helper('contacts')->__('Submit') ?></span></span></button>
+    </div>
+  </form>
+
+  
+
+  
+  
+  
+  <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><div class="gmframe" style='overflow:hidden;height:422px;width:541px;'><div id='gmap_canvas' style='height:400px;width:520px;'></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div> <a href='https://embed-map.org/'>how to embed a google map into a website</a> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=f3fbabfbcc7d10b7de9e47db86449ae091ec4456'></script><script type='text/javascript'>function init_map(){var myOptions = {zoom:12,center:new google.maps.LatLng(40.725902,-111.93030349999998),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(40.725902,-111.93030349999998)});infowindow = new google.maps.InfoWindow({content:'<strong>Clever Mage</strong><br>1405E 2100S<br>84117 Salt Lake City<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+  
+  
+  
+  
+  <script type="text/javascript">
+//<![CDATA[
+    var contactForm = new VarienForm('contactForm', true);
+    function contactFormSubmit(button){
+        if(contactForm.validator &&  contactForm.validator.validate()){
+            Form.Element.disable(button);
+            contactForm.submit();
+        }
+    }
+//]]>
+</script>
+</div>
+
+
+
+
+
+

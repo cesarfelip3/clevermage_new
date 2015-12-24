@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dashboard Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">YouTube Gallery</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 main">
+          <h1 class="page-header">How to install Extension</h1>
+          <ol>
+          	<li>
+          		Login to Magento backend.
+          	</li>
+          	<li>Go to <strong>System > Tools > Compilations.</strong>
+          		<br>
+          		If Compiler Status is <strong>Enabled</strong>, disable the compilation by clicking the button <strong>Disable</strong> in the upper right corner.
+			</li>
+          	<li>Backup your store database and web directory.</li>
+          	<li>Download extension from your Account.</li>
+          	<li>Unzip the extension locally.</li>
+          	<li>Copy contents of the folder to the root directory of Magento store.</li>
+          	<li>
+				Completely clear the site cache.
+				<br>
+				Go to <strong>System > Cache Management</strong>. Click button <strong>Flush Magento Cache</strong>. 
+				<br>
+				If you want to clear the cache manually, you need to remove a folder <code>/var/cache</code> at the server.
+
+          	</li>
+          	<li>Logout from Magento backend and login again.</li>
+          	<li>
+          		If compilation was enabled before installation, you need to run recompilation process to enable compilation. 
+          		<br>
+          		Go to <strong>System > Tools > Compilation</strong> and click on <strong>Run Compilation Process</strong>.
+          	</li>
+          	<li>
+          		Go to <strong>System > Configuration > YouTube Gallery</strong> and open <a href="https://console.developers.google.com" targe="_blank">Google Developers Console</a>.
+          	</li>
+          	<li>
+          		Create a new project in Google Developers Console
+          		<img src="step/3.jpg">
+          	</li>
+          	<li>
+          		In Project Name set "YouTube Gallery", next copy your project ID, then click in Create button.
+          		<img src="step/4.jpg">
+          	</li>
+          	<li>
+          		In Magento paste your project ID in "Project ID" field in API Settings tab.
+          		<img src="step/4-1.jpg">
+          	</li>
+          	<li>
+          		In Google Developers Console click in <strong>APIs & Auth > APis</strong>, next click <Strong>"YouTube Data API"</strong>.
+          		<img src="step/6.jpg">
+          	</li>
+          	<li>
+          		Click <strong>Enable API</strong> button.
+          	</li>
+          	<li>
+          		Click in <strong>APIs & Auth > Credentials</strong>, next click <strong>Add credentials</strong> button, then click <strong>API key</strong>.
+          		<img src="step/9.jpg">
+          	</li>
+          	<li>
+          		Click <strong>Server key button</strong>.
+          		<img src="step/10.jpg">
+          	</li>
+          	<li>
+          		In name put <strong>YouTube Gallery Server</strong>, next click <strong>Create button</strong>.
+          		<img src="step/11.jpg">
+          	</li>
+          	<li>
+          		Copy <strong>API key</strong> that was generated, next click <strong>"Ok" button</strong>.
+          		<img src="step/12.jpg">
+          	</li>
+          	<li>
+          		In Magento paste <strong>API Key</strong> in <strong>"API Key for server applications" field</strong>.
+          		<img src="step/12-1.jpg">
+          	</li>
+          	<li>
+          		In Google Developers Console click <strong>Add credentials</strong> button, next click <strong>API key</strong>.
+          		<img src="step/13.jpg">
+          	</li>
+          	<li>
+          		Click <strong>Brownser key</strong> button.
+          		<img src="step/14.jpg">
+          	</li>
+          	<li>
+          		In Project Name set <strong>YouTube Browser</strong>, next click <strong>Create</strong> button.
+          		<img src="step/15.jpg">
+          	</li>
+          	<li>
+          		Copy <strong>API key</strong> that was generated, next click <strong>"Ok" button</strong>.
+          		<img src="step/16.jpg">
+          	</li>
+          	<li>
+          		Copy <strong>API key</strong> that was generated, next click <strong>"Ok" button</strong>.
+          		<img src="step/16.jpg">
+          	</li>
+          	<li>
+          		In Magento paste <strong>API Key</strong> in <strong>"API Key for browser applications" field</strong>.
+          		<img src="step/16-1.jpg">
+          	</li>
+          	<li>
+          		In Google Developers Console click <strong>Permissions</strong> button, next copy <strong>first email in Account</strong>.
+          		<img src="step/17.jpg">
+          	</li>
+          	<li>
+          		In Magento paste <strong>Email</strong> in <strong>"Service account Email Address" field</strong>.
+          		<img src="step/18.jpg">
+          	</li>
+          </ol>
+                    
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
