@@ -26,6 +26,7 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
     public function postAction()
     {
         echo '<pre>';
+        $this->getRequest()->getParam('mail');
         print_r($this->getRequest()->getParams());
         die;
         $fromEmail = $this->getRequest()->getParam('mail');
@@ -34,7 +35,7 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
 	$toEmail = "itmyprofession@gmail.com";
 	$toName = "Cesar Felipe";
 	
-        $body = "Telphone : " . $this->getRequest()->getParam('comment') . "\n";
+        $body = "Telphone : " . $this->getRequest()->getParam('telephone') . "\n";
 	$body .= 'Comment : ' .$this->getRequest()->getParam('comment');
         
 	$subject = $this->getRequest()->getParam('subject');
