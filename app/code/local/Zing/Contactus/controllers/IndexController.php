@@ -30,8 +30,6 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
             $emailTemplate = Mage::getModel('core/email_template')
                     ->loadDefault('zing_custom_email_template1');
 
-            print_r($emailTemplate);
-            die;
             $processedTemplate = $emailTemplate->getProcessedTemplate($emailTemplateVariables);
 
             $emailTemplate->setSenderEmail($this->getRequest()->getParam('mail'));
