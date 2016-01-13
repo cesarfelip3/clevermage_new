@@ -35,7 +35,7 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
 	$body .= 'Comment : ' .$this->getRequest()->getParam('comment');
         
 	$subject = $this->getRequest()->getParam('subject');
-	echo __LINE__;die;
+        
 	$mail = new Zend_Mail();		
 	
 	$mail->setBodyHtml($body);
@@ -48,6 +48,7 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
 	
 	try {
 		$mail->send();
+                echo __FILE__;die;
 	}
 	catch(Exception $ex) {
 		// I assume you have your custom module. 
