@@ -49,6 +49,8 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
                     ->addError(Mage::helper('zing_contactus')
                             ->__('Unable to send email.'));
         }
+        echo __FILE__;
+        echo $refererUrl = $this->_getRefererUrl();die;
         return $this->_redirectReferer();
         echo "Success";
     }
