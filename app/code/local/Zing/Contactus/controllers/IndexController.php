@@ -25,10 +25,6 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
     
     public function postAction()
     {
-        echo '<pre>';
-        echo $this->getRequest()->getParam('mail');
-        print_r($this->getRequest()->getParams());
-        die;
         $fromEmail = $this->getRequest()->getParam('mail');
 	$fromName = $this->getRequest()->getParam('name');
 	
@@ -39,10 +35,10 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
 	$body .= 'Comment : ' .$this->getRequest()->getParam('comment');
         
 	$subject = $this->getRequest()->getParam('subject');
-	
+	echo __LINE__;die;
 	$mail = new Zend_Mail();		
 	
-	$mail->setBodyText($body);
+	$mail->setBodyHtml($body);
 	
 	$mail->setFrom($fromEmail, $fromName);
 	
