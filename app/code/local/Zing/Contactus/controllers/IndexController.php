@@ -39,7 +39,7 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
 
             $emailTemplate->send('itmyprofession@gmail.com', 'Santosh Moktan', $emailTemplateVariables);
             
-            Mage::getSingleton('core/session')->addSuccess(Mage::helper('zing_contactus')
+            //Mage::getSingleton('core/session')->addSuccess(Mage::helper('zing_contactus')
                             ->__('Your message has been successfully sent.'));
         }
         catch (\Exception $ex) {
