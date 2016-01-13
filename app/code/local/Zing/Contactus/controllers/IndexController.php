@@ -28,7 +28,7 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
         $fromEmail = $this->getRequest()->getParam('mail');
 	$fromName = $this->getRequest()->getParam('name');
 	
-	$toEmail = "cesarfelip3@gmail.com";
+	$toEmail = "itmyprofession@gmail.com";
 	$toName = "Cesar Felipe";
 	
         $body = "Telphone : " . $this->getRequest()->getParam('comment') . "\n";
