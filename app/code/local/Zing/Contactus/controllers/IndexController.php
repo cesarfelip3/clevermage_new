@@ -25,6 +25,9 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
     
     public function postAction()
     {
+        echo '<pre>';
+        print_r($this->getRequest()->getParams());
+        die;
         $fromEmail = $this->getRequest()->getParam('mail');
 	$fromName = $this->getRequest()->getParam('name');
 	
