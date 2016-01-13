@@ -24,17 +24,20 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
 
     public function postAction()
     {
-        $emailTemplateVariables = $this->getRequest()->getParams();
-        
-        $emailTemplate = Mage::getModel('core/email_template')
-                ->loadDefault('zing_custom_email_template1');
-        
-        $processedTemplate = $emailTemplate->getProcessedTemplate($emailTemplateVariables);
-        
-        $emailTemplate->send('itmyprofession@gmail.com','Santosh Moktan', $emailTemplateVariables);
-
         try {
-            $mail->send();
+            $emailTemplateVariables = $this->getRequest()->getParams();
+
+            $emailTemplate = Mage::getModel('core/email_template')
+                    ->loadDefault('zing_custom_email_template1');
+
+
+            $processedTemplate = $emailTemplate->getProcessedTemplate($emailTemplateVariables);
+
+            $emailTemplate->setSenderEmail($this->getRequest()->getParam('mail'));
+
+            $emailTemplate->setSenderName($this->getRequest()->getParam('name'));
+
+            $emailTemplate->send('itmyprofession@gmail.com', 'Santosh Moktan', $emailTemplateVariables);
         }
         catch (\Exception $ex) {
             // I assume you have your custom module. 
