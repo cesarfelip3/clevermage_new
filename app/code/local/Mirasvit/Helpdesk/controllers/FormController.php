@@ -89,6 +89,7 @@ class Mirasvit_Helpdesk_FormController extends Mage_Core_Controller_Front_Action
                     }
                 } else {
                     $mailTemplate = Mage::getModel('core/email_template');
+                    $store = Mage::app()->getStore()->getId();
                     /* @var $mailTemplate Mage_Core_Model_Email_Template */
                     $mailTemplate->setDesignConfig(array('area' => 'frontend'))
                         ->setReplyTo($post['email'])
@@ -97,7 +98,8 @@ class Mirasvit_Helpdesk_FormController extends Mage_Core_Controller_Front_Action
                             Mage::getStoreConfig(self::XML_PATH_EMAIL_SENDER),
                             Mage::getStoreConfig(self::XML_PATH_EMAIL_RECIPIENT),
                             null,
-                            array('data' => $postObject)
+                            array('data' => $postObject),
+                            $store
                         );
 
                     if (!$mailTemplate->getSentSuccess()) {

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Zing_Contactus>
+            <version>1.0.0</version>
+        </Zing_Contactus>
+    </modules>
+
+    <frontend>
+        <routers>
+            <zing_contactus>
+                <use>standard</use>
+                <args>
+                    <module>Zing_Contactus</module>
+                    <frontName>customcontactus</frontName>
+                </args>
+            </zing_contactus>
+        </routers>
+
+        <layout>
+            <updates>
+                <zing_contactus>
+                    <file>zing/contactus.xml</file>
+                </zing_contactus>
+            </updates>
+        </layout>
+    </frontend>
+
+    <global>
+        <blocks>
+            <zing_contactus>
+                <class>Zing_Contactus_Block</class>
+            </zing_contactus>
+        </blocks>
+
+        <helpers>
+            <zing_contactus>
+                <class>Zing_Contactus_Helper</class>
+            </zing_contactus>
+        </helpers>
+
+        <models>
+            <zing_contactus>
+                <class>Zing_Contactus_Model</class>
+            </zing_contactus>
+        </models>
+    </global>
+</config>
