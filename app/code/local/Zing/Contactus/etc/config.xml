@@ -12,7 +12,7 @@
                 <use>standard</use>
                 <args>
                     <module>Zing_Contactus</module>
-                    <frontName>customcontactus</frontName>
+                    <frontName>customcontact</frontName>
                 </args>
             </zing_contactus>
         </routers>

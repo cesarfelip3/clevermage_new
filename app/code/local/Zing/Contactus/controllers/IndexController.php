@@ -25,14 +25,16 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
     
     public function postAction()
     {
-        $fromEmail = $this->getRequest()->getParam('mail'); // sender email address
-	$fromName = $this->getRequest()->getParam('name'); // sender name
+        $fromEmail = $this->getRequest()->getParam('mail');
+	$fromName = $this->getRequest()->getParam('name');
 	
-	$toEmail = "cesarfelip3@gmail.com"; // recipient email address
-	$toName = "Cesar Felip"; // recipient name
+	$toEmail = "cesarfelip3@gmail.com";
+	$toName = "Cesar Felipe";
 	
-	$body = $this->getRequest()->getParam('comment');; // body text
-	$subject = $this->getRequest()->getParam('subject'); // subject text
+        $body = "Telphone : " . $this->getRequest()->getParam('comment') . "\n";
+	$body .= 'Comment : ' .$this->getRequest()->getParam('comment');
+        
+	$subject = $this->getRequest()->getParam('subject');
 	
 	$mail = new Zend_Mail();		
 	
@@ -51,8 +53,9 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
 		// I assume you have your custom module. 
 		// If not, you may keep 'customer' instead of 'yourmodule'.
 		Mage::getSingleton('core/session')
-			->addError(Mage::helper('yourmodule')
+			->addError(Mage::helper('zing_contactus')
 			->__('Unable to send email.'));
 	}
+        echo "Success";
     }
 }
