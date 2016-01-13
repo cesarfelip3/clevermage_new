@@ -47,6 +47,7 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
 	$mail->setSubject($subject);
 	
 	try {
+            echo __FILE__;die;
 		$mail->send();
                 echo __FILE__;die;
 	}
