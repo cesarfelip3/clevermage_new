@@ -26,7 +26,7 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
     {
         try {
             $emailTemplateVariables = $this->getRequest()->getParams();
-            
+
             $emailTemplate = Mage::getModel('core/email_template')
                     ->loadDefault('zing_custom_email_template1');
 
@@ -38,7 +38,7 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
             $emailTemplate->setSenderName($this->getRequest()->getParam('name'));
 
             $emailTemplate->send('itmyprofession@gmail.com', 'Santosh Moktan', $emailTemplateVariables);
-            
+
             Mage::getSingleton('core/session')->addSuccess('Your message has been successfully sent.');
         }
         catch (\Exception $ex) {
@@ -49,8 +49,8 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
                             ->__('Unable to send email.'));
         }
         $refererUrl = $this->_getRefererUrl();
-        $this->_redirect($refererUrl);
-        return;
+        $this->getResponse()->setRedirect($refererUrl);
+        return $this;
     }
 
 }
