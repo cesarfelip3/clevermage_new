@@ -45,6 +45,7 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
             Mage::getSingleton('core/session')
                     ->addError(Mage::helper('zing_contactus')
                             ->__('Unable to send email.'));
+            echo $e->getMessage();
         }
         echo "Success";
     }
