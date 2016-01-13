@@ -28,6 +28,7 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
             $emailTemplateVariables = $this->getRequest()->getParams();
             
             print_r($emailTemplateVariables);
+            die;
             
             $emailTemplate = Mage::getModel('core/email_template')
                     ->loadDefault('zing_custom_email_template1');
@@ -42,7 +43,7 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
             $emailTemplate->send('itmyprofession@gmail.com', 'Santosh Moktan', $emailTemplateVariables);
             
             //Mage::getSingleton('core/session')->addSuccess(Mage::helper('zing_contactus')
-                            ->__('Your message has been successfully sent.'));
+                           // ->__('Your message has been successfully sent.'));
         }
         catch (\Exception $ex) {
             // I assume you have your custom module. 
