@@ -34,6 +34,8 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
             Mage::getSingleton('core/session')->addSuccess('Your message has been successfully sent.');
         }
         catch (\Exception $ex) {
+            echo '<pre>';
+            print_r($ex);die;
             // I assume you have your custom module. 
             // If not, you may keep 'customer' instead of 'yourmodule'.
             Mage::getSingleton('core/session')
