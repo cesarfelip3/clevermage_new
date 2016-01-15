@@ -19,8 +19,6 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
     {
         try {
             $emailTemplateVariables = $this->getRequest()->getParams();
-            echo '<pre>';
-            print_r($emailTemplateVariables);
             
             $emailTemplate = Mage::getModel('core/email_template')
                     ->loadDefault('zing_custom_email_template1');
@@ -30,9 +28,9 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
             $emailTemplate->setSenderEmail($this->getRequest()->getParam('mail'));
 
             $emailTemplate->setSenderName($this->getRequest()->getParam('name'));
-            print_r($emailTemplate);
+
             $emailTemplate->send('cesarfelip3@gmail.com', 'Cesar Felipe', $emailTemplateVariables);
-            die;
+
             Mage::getSingleton('core/session')->addSuccess('Your message has been successfully sent.');
         }
         catch (\Exception $ex) {
