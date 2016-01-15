@@ -29,7 +29,7 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
 
             $emailTemplate->setSenderName($this->getRequest()->getParam('name'));
 
-            $emailTemplate->send('cesarfelip3@gmail.com', 'Cesar Felipe', $emailTemplateVariables);
+            $emailTemplate->send('felipe@clevermage.com', 'Cesar Felipe', $emailTemplateVariables);
 
             Mage::getSingleton('core/session')->addSuccess('Your message has been successfully sent.');
         }
