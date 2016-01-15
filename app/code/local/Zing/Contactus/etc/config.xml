@@ -48,7 +48,7 @@
             <email>
                 <zing_custom_email_template1 module="zing_contactus">
                     <label>Zing custom email module</label>
-                    <file>zing_custom_email1.html</file>
+                    <file>zing_custom_email_template1.html</file>
                     <type>html</type>
                 </zing_custom_email_template1>
             </email>
