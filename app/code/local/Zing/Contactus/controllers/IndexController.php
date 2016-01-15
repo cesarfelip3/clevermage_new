@@ -19,7 +19,7 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
     {
         try {
             $emailTemplateVariables = $this->getRequest()->getParams();
-            
+
             $emailTemplate = Mage::getModel('core/email_template')
                     ->loadDefault('zing_custom_email_template1');
 
@@ -29,13 +29,23 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
 
             $emailTemplate->setSenderName($this->getRequest()->getParam('name'));
 
-            $emailTemplate->send('felipe@clevermage.com', 'Cesar Felipe', $emailTemplateVariables);
+            $mail = Mage::getModel('core/email')
+                    ->setToName('Cesar Felipe')
+                    ->setToEmail('itmyprofession@gmail.com')
+                    ->setBody($processedTemplate)
+                    ->setSubject($emailTemplateVariables['subject'])
+                    ->setFromEmail($emailTemplateVariables['mail'])
+                    ->setFromName($emailTemplateVariables['name'])
+                    ->setType('html');
+            $mail->send();
+            //$emailTemplate->send('felipe@clevermage.com', 'Cesar Felipe', $emailTemplateVariables);
 
             Mage::getSingleton('core/session')->addSuccess('Your message has been successfully sent.');
         }
         catch (\Exception $ex) {
             echo '<pre>';
-            print_r($ex);die;
+            print_r($ex);
+            die;
             // I assume you have your custom module. 
             // If not, you may keep 'customer' instead of 'yourmodule'.
             Mage::getSingleton('core/session')
