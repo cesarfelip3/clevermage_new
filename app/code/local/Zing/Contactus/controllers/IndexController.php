@@ -31,7 +31,7 @@ class Zing_Contactus_IndexController extends Mage_Core_Controller_Front_Action
 
             $mail = Mage::getModel('core/email')
                     ->setToName('Cesar Felipe')
-                    ->setToEmail('itmyprofession@gmail.com')
+                    ->setToEmail('felipe@clevermage.com')
                     ->setBody($processedTemplate)
                     ->setSubject($emailTemplateVariables['subject'])
                     ->setFromEmail($emailTemplateVariables['mail'])
