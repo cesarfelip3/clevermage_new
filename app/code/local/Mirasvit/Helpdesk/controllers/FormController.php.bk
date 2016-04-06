@@ -63,7 +63,6 @@ class Mirasvit_Helpdesk_FormController extends Mage_Core_Controller_Front_Action
                     //telephone
                     //priority_id
                     //department_id
-			//die(__FILE__);
                     $params = array();
                     $params['name'] = $post['subject'];
                     $params['message'] = $post['comment'];
@@ -88,13 +87,12 @@ class Mirasvit_Helpdesk_FormController extends Mage_Core_Controller_Front_Action
                     if (empty($post['email'])) { //spam protection
                         Mage::helper('helpdesk/process')->createFromPost($params, Mirasvit_Helpdesk_Model_Config::CHANNEL_CONTACT_FORM);
                     }
-	          } else {
+                } else {
                     $mailTemplate = Mage::getModel('core/email_template');
                     $store = Mage::app()->getStore()->getId();
                     /* @var $mailTemplate Mage_Core_Model_Email_Template */
                     $mailTemplate->setDesignConfig(array('area' => 'frontend'))
-                        ->setReplyTo('cesarfelip3@gmail.com')
-			//->addBCC('cesarfelip3@gmail.com')
+                        ->setReplyTo($post['email'])
                         ->sendTransactional(
                             Mage::getStoreConfig(self::XML_PATH_EMAIL_TEMPLATE),
                             Mage::getStoreConfig(self::XML_PATH_EMAIL_SENDER),
@@ -103,6 +101,7 @@ class Mirasvit_Helpdesk_FormController extends Mage_Core_Controller_Front_Action
                             array('data' => $postObject),
                             $store
                         );
+
                     if (!$mailTemplate->getSentSuccess()) {
                         throw new Exception();
                     }
@@ -127,3 +126,4 @@ class Mirasvit_Helpdesk_FormController extends Mage_Core_Controller_Front_Action
         }
     }
 }
+

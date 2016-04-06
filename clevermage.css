@@ -1,0 +1,6 @@
+@charset "utf-8";
+/* CSS Document */
+header{background: #282828 none repeat scroll 0 0;}
+.container{ max-width:100% !important}
+.custom{margin: 20px auto 0 !important;    width: 955px !important;}
+.custom li > span{background: rgba(0, 0, 0, 0) url("spirit.png") no-repeat scroll 0 0 !important; display: block;}

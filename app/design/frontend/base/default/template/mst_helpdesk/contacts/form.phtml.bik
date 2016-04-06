@@ -7,19 +7,12 @@
 
 
 <div class="innerwrapper">
-  <form action="<?php echo $this->getFormAction(); ?>" id="contactForm" style=" margin-bottom:20px" class="helpdesk-contacts-form" method="post" enctype="multipart/form-data">
+  <form action="<?php echo $this->getFormAction(); ?>" id="contactForm" class="helpdesk-contacts-form" method="post" enctype="multipart/form-data">
     <div class="fieldset">
       <h2 class="legend"><?php echo Mage::helper('contacts')->__('Contact Information') ?></h2>
       <ul class="form-list">
-	  <li class="fields" style="width:100%">
-	    <a href="#" name="SOBookingLink" data-page="clevermage" onclick="soe.toggleLightBox('clevermage')"><input type="button" value="Schedule an Appointment" style="text-transform: uppercase; background-color:#000;color:#fff; border-radius:3px;-webkit-appearance: none; font-size:14px;font-weight:bold;padding:10px 20px; border:none; float:left cursor:pointer; width:auto; text-decoration:none"/></a> <script type="text/javascript">ScheduleOnceEmbedBookingBText = "Schedule an Appointment"; ScheduleOnceEmbedBookingBBGColor = "rgb(254, 158, 12)"; ScheduleOnceEmbedBookingBTextColor = "rgb(0, 0, 0)"; ScheduleOnceEmbedLink = "//secure.scheduleonce.com/clevermage&thm=blue&bc=FE9E0C&tc=000000"; ScheduleOnceEmbedPageName = "'clevermage'";</script><script type="text/javascript" src="//static.scheduleonce.com/mergedjs/ScheduleOnceEmbed.js"></script><script type="text/javascript">soe.AddEventListners();</script>
-
-  
-	  
-	  </li>
-	  
-      <li class="fields"><strong>801 854 2228</strong></li>
-      <li class="fields">339 E 3900 S Suite 140, Salt Lake City Utah</li>
+      <li class="fields"><strong>801 418 9457</strong></li>
+      <li class="fields">1405 S 2100 E, Salt Lake City, UT 84108</li>
         <li class="fields">
           <div class="field">
             <div class="input-box">
@@ -74,15 +67,14 @@
       <button type="submit" title="<?php echo Mage::helper('contacts')->__('Submit') ?>" class="button"
             onclick="contactFormSubmit(this)" ><span><span><?php echo Mage::helper('contacts')->__('Submit') ?></span></span></button>
     </div>
-	
-	
-	
   </form>
 
+  
 
   
   
-  <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><div class="gmframe" style='overflow:hidden;height:422px;width:541px;'><div id='gmap_canvas' style='height:400px;width:520px;'></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div> <a href='https://embed-map.org/">&nbsp;</a> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=f3fbabfbcc7d10b7de9e47db86449ae091ec4456'></script><script type='text/javascript'>function init_map(){var myOptions = {zoom:12,center:new google.maps.LatLng(40.725902,-111.93030349999998),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(40.725902,-111.93030349999998)});infowindow = new google.maps.InfoWindow({content:'<strong>Clever Mage</strong><br>1405E 2100S<br>84117 Salt Lake City<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+  
+  <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><div class="gmframe" style='overflow:hidden;height:422px;width:541px;'><div id='gmap_canvas' style='height:400px;width:520px;'></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=f3fbabfbcc7d10b7de9e47db86449ae091ec4456'></script><script type='text/javascript'>function init_map(){var myOptions = {zoom:12,center:new google.maps.LatLng(40.725902,-111.93030349999998),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(40.725902,-111.93030349999998)});infowindow = new google.maps.InfoWindow({content:'<strong>Clever Mage</strong><br>1405E 2100S<br>84117 Salt Lake City<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
   
   
   

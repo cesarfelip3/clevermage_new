@@ -94,8 +94,10 @@ class Mage_Contacts_IndexController extends Mage_Core_Controller_Front_Action
                 $mailTemplate = Mage::getModel('core/email_template');
                 /* @var $mailTemplate Mage_Core_Model_Email_Template */
                 $mailTemplate->setDesignConfig(array('area' => 'frontend'))
-                    ->setReplyTo($post['email'])
-                    ->sendTransactional(
+                    //->setReplyTo($post['email'])
+			->setReplyTo('cesarfelip3@gmail.com')
+			//->addBCC('cesarfelip3@gmail.com')                    
+			->sendTransactional(
                         Mage::getStoreConfig(self::XML_PATH_EMAIL_TEMPLATE),
                         Mage::getStoreConfig(self::XML_PATH_EMAIL_SENDER),
                         Mage::getStoreConfig(self::XML_PATH_EMAIL_RECIPIENT),
