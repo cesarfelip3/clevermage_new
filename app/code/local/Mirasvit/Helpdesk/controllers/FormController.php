@@ -86,7 +86,7 @@ class Mirasvit_Helpdesk_FormController extends Mage_Core_Controller_Front_Action
                         }
                     }
                     if (empty($post['email'])) { //spam protection
-                        
+
                         Mage::helper('helpdesk/process')->createFromPost($params, Mirasvit_Helpdesk_Model_Config::CHANNEL_CONTACT_FORM);
                     }
 	          } else {
@@ -109,6 +109,7 @@ class Mirasvit_Helpdesk_FormController extends Mage_Core_Controller_Front_Action
                     }
                     $translate->setTranslateInline(true);
                 }
+                echo __FILE__ . __LINE__;die;
                 Mage::getSingleton('customer/session')->addSuccess(Mage::helper('contacts')->__('Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.'));
                 $this->_redirectReferer();
 
