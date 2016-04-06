@@ -86,7 +86,6 @@ class Mirasvit_Helpdesk_FormController extends Mage_Core_Controller_Front_Action
                         }
                     }
                     if (empty($post['email'])) { //spam protection
-                        die;
                         Mage::helper('helpdesk/process')->createFromPost($params, Mirasvit_Helpdesk_Model_Config::CHANNEL_CONTACT_FORM);
                     }
 	          } else {
