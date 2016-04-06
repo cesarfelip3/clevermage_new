@@ -67,7 +67,7 @@ class Mirasvit_Helpdesk_Helper_Process extends Varien_Object
         $ticket->save();
         $body = $post['message'];
         // $body = Mage::helper('helpdesk/string')->parseBody($post['message'], Mirasvit_Helpdesk_Model_Config::FORMAT_PLAIN);
-        $ticket->addMessage($body, $customer, false, Mirasvit_Helpdesk_Model_Config::CUSTOMER, Mirasvit_Helpdesk_Model_Config::MESSAGE_PUBLIC, false, Mirasvit_Helpdesk_Model_Config::FORMAT_PLAIN);
+        $ticket->addMessage($body, $customer, false, Mirasvit_Helpdesk_Model_Config::CUSTOMER, Mirasvit_Helpdesk_Model_Config::MESSAGE_PUBLIC, 'samuel@agilizelabs.com', Mirasvit_Helpdesk_Model_Config::FORMAT_PLAIN);
         Mage::helper('helpdesk/history')->changeTicket($ticket, Mirasvit_Helpdesk_Model_Config::CUSTOMER, array('customer' => $customer));
 
         return $ticket;
